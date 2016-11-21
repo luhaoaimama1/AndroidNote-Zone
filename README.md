@@ -28,9 +28,9 @@
         >功能:listView与RecyclerView 的adapter仅仅改下类名即可公用;并且可以省去强转的麻烦;
     * [ZAnimate](https://github.com/luhaoaimama1/ZAnimate)
     
-        >2d库:就是把androidnineold 变成连用的方式 ,并且减少了不必要的参数,与预设动画的支持;
+        >[2d库](https://github.com/luhaoaimama1/ZAnimate):就是把androidnineold 变成连用的方式 ,并且减少了不必要的参数,与预设动画的支持;
 
-        >3d库 如果请看demo 没有3d的readme~ 演示也麻烦~ 理解方式遵循ae的图层
+        >[3d库](https://github.com/luhaoaimama1/ZAnimate/blob/master/README-3D.md):理解方式遵循ae的图层
     * [Shine](https://github.com/luhaoaimama1/Shine)
 
         >与github上的shimmer类似; 多了个 bitmap加shine与倾斜角度 等等
