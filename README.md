@@ -7,7 +7,7 @@
 ******
 
 
-* <span id = "anchor">攻坚篇</span>
+* 攻坚篇
     * [PorterDuffXfermode的正确使用方式](https://github.com/luhaoaimama1/zone-sdk/blob/master/README-Xfermode.md)
     * [NestedScrolling Child与Parent的实例学习](https://github.com/luhaoaimama1/zone-sdk/blob/master/README-NestedScrolling.md)
 
@@ -28,6 +28,7 @@
 
         >因为当时公司用的都是string,所以就没有匹配其他类型~ 老项目(GBK编码 GUI项目) 命名什么的不要吐槽了~ 写的很坑不过理解的话应该还可以
 
+<span id = "anchor">攻坚篇</span>
 * 项目介绍篇(按顺序 从好到一般)
     * [zone-sdk](https://github.com/luhaoaimama1/zone-sdk)
     
