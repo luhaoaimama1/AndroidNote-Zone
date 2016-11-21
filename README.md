@@ -2,11 +2,12 @@
 #关于github项目与学习的概要
 >PS:本文基本都是通过项目实战来学习的
 
->分三篇: [攻坚篇](#攻坚篇),`项目介绍篇`,`插件篇`
+>分三篇: [攻坚篇](#anchor),`项目介绍篇`,`插件篇`
 
 ******
 
-* #攻坚篇
+
+* <span id = "anchor">攻坚篇</span>
     * [PorterDuffXfermode的正确使用方式](https://github.com/luhaoaimama1/zone-sdk/blob/master/README-Xfermode.md)
     * [NestedScrolling Child与Parent的实例学习](https://github.com/luhaoaimama1/zone-sdk/blob/master/README-NestedScrolling.md)
 
