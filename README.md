@@ -4,18 +4,26 @@
 
 ******
 
-* 插件篇
-    * [快速生成六种单例](https://github.com/luhaoaimama1/SingletonTest)
-    
-        >功能:快速生成六种单例模式
-    
-        >痛点:单例模式无法继承,导致每次都需要写 很费劲。并且是固定写法;
-    
-    * [空格检测](https://github.com/luhaoaimama1/SpaceTest2)
-      
-        >功能:检查字符串是否有空格
-        
-        >痛点:当一个类url常量过多,不小心开头弄出空格,还好使,但是cache缓存方面却失常的问题...
+* 攻坚篇
+    * [PorterDuffXfermode的正确使用方式](https://github.com/luhaoaimama1/zone-sdk/blob/master/README-Xfermode.md)
+    * [NestedScrolling Child与Parent的实例学习](https://github.com/luhaoaimama1/zone-sdk/blob/master/README-NestedScrolling.md)
+
+        >页面效果:zone-sdk:->onTouch事件传递与其辅助类的研究->即可看到;
+    * [打造无敌解耦的BaseActivity](https://github.com/luhaoaimama1/zone-sdk/blob/master/README-BaseActivity.md)
+
+        >解耦，各司其职。拍照等涉及onActivityResult的封装
+    * [Android 屏幕适配终极解决方案（包含生成程序dp sp与解决方案）](https://github.com/luhaoaimama1/AnnotationStudy/blob/master/README.md)
+
+        >[ldpi,mdip,hdpi,xhdip,xxhdpi生成DP](https://github.com/luhaoaimama1/JavaZone/blob/master/JavaTest_Zone/src/%E9%80%82%E9%85%8D/MakeXml_Dp.java)
+
+        >[ldpi,mdip,hdpi,xhdip,xxhdpi生成SP](https://github.com/luhaoaimama1/JavaZone/blob/master/JavaTest_Zone/src/%E9%80%82%E9%85%8D/MakeXml_Sp.java)
+        ```
+        ldpi("values-ldpi",0.75F),mdpi("values-mdpi",1.0F),hdpi("values-hdpi",1.5F),xhdpi("values-xhdpi",2F),xxhdpi("values-xxhdpi",3F);
+        ```
+        >[如果想支持多种像素文件夹那种 看这个](https://github.com/luhaoaimama1/JavaZone/blob/master/JavaTest_Zone/src/%E9%80%82%E9%85%8D/MakeXml_AccurateSize.java)
+    * [如果有人对json解析实体类感兴趣,请看这个项目](https://github.com/luhaoaimama1/JsonParser)
+
+        >因为当时公司用的都是string,所以就没有匹配其他类型~ 老项目(GBK编码 GUI项目) 命名什么的不要吐槽了~ 写的很坑不过理解的话应该还可以
 
 * 项目介绍篇(按顺序 从好到一般)
     * [zone-sdk](https://github.com/luhaoaimama1/zone-sdk)
@@ -58,25 +66,17 @@
 
         >一个可以把网络请求 和pullview关联，从而不需要处理 翻页 上拉下拉的动画处理 与 数据更新问题 并且可以全局切换网络请求库
 
-* 攻坚篇
-    * [PorterDuffXfermode的正确使用方式](https://github.com/luhaoaimama1/zone-sdk/blob/master/README-Xfermode.md)
-    * [NestedScrolling Child与Parent的实例学习](https://github.com/luhaoaimama1/zone-sdk/blob/master/README-NestedScrolling.md)
-
-        >页面效果:zone-sdk:->onTouch事件传递与其辅助类的研究->即可看到;
-    * [打造无敌解耦的BaseActivity](https://github.com/luhaoaimama1/zone-sdk/blob/master/README-BaseActivity.md)
-
-        >解耦，各司其职。拍照等涉及onActivityResult的封装
-    * [Android 屏幕适配终极解决方案（包含生成程序dp sp与解决方案）](https://github.com/luhaoaimama1/AnnotationStudy/blob/master/README.md)
-
-        >[ldpi,mdip,hdpi,xhdip,xxhdpi生成DP](https://github.com/luhaoaimama1/JavaZone/blob/master/JavaTest_Zone/src/%E9%80%82%E9%85%8D/MakeXml_Dp.java)
-
-        >[ldpi,mdip,hdpi,xhdip,xxhdpi生成SP](https://github.com/luhaoaimama1/JavaZone/blob/master/JavaTest_Zone/src/%E9%80%82%E9%85%8D/MakeXml_Sp.java)
-        ```
-        ldpi("values-ldpi",0.75F),mdpi("values-mdpi",1.0F),hdpi("values-hdpi",1.5F),xhdpi("values-xhdpi",2F),xxhdpi("values-xxhdpi",3F);
-        ```
-        >[如果想支持多种像素文件夹那种 看这个](https://github.com/luhaoaimama1/JavaZone/blob/master/JavaTest_Zone/src/%E9%80%82%E9%85%8D/MakeXml_AccurateSize.java)
-    * [如果有人对json解析实体类感兴趣,请看这个项目](https://github.com/luhaoaimama1/JsonParser)
-
-        >因为当时公司用的都是string,所以就没有匹配其他类型~ 老项目(GBK编码 GUI项目) 命名什么的不要吐槽了~ 写的很坑不过理解的话应该还可以 
+ * 插件篇
+     * [快速生成六种单例](https://github.com/luhaoaimama1/SingletonTest)
+     
+         >功能:快速生成六种单例模式
+     
+         >痛点:单例模式无法继承,导致每次都需要写 很费劲。并且是固定写法;
+     
+     * [空格检测](https://github.com/luhaoaimama1/SpaceTest2)
+       
+         >功能:检查字符串是否有空格
+         
+         >痛点:当一个类url常量过多,不小心开头弄出空格,还好使,但是cache缓存方面却失常的问题...
 
 ******
