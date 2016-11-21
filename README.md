@@ -66,17 +66,17 @@
 
         >一个可以把网络请求 和pullview关联，从而不需要处理 翻页 上拉下拉的动画处理 与 数据更新问题 并且可以全局切换网络请求库
 
- * 插件篇
-     * [快速生成六种单例](https://github.com/luhaoaimama1/SingletonTest)
-     
-         >功能:快速生成六种单例模式
-     
-         >痛点:单例模式无法继承,导致每次都需要写 很费劲。并且是固定写法;
-     
-     * [空格检测](https://github.com/luhaoaimama1/SpaceTest2)
-       
+* 插件篇
+    * [快速生成六种单例](https://github.com/luhaoaimama1/SingletonTest)
+
+        >功能:快速生成六种单例模式
+
+        >痛点:单例模式无法继承,导致每次都需要写 很费劲。并且是固定写法;
+
+    * [空格检测](https://github.com/luhaoaimama1/SpaceTest2)
+
          >功能:检查字符串是否有空格
-         
+ 
          >痛点:当一个类url常量过多,不小心开头弄出空格,还好使,但是cache缓存方面却失常的问题...
 
 ******
