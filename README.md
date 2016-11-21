@@ -2,11 +2,11 @@
 #关于github项目与学习的概要
 >PS:本文基本都是通过项目实战来学习的
 
->分三篇: `攻坚篇`[非](#way3),`项目介绍篇`,`插件篇`
+>分三篇: [`攻坚篇`](#way),[`项目介绍篇`](#way2),[`插件篇`](#way3)
 
 ******
 
-
+<a id="way"></a>
 * 攻坚篇
     * [PorterDuffXfermode的正确使用方式](https://github.com/luhaoaimama1/zone-sdk/blob/master/README-Xfermode.md)
     * [NestedScrolling Child与Parent的实例学习](https://github.com/luhaoaimama1/zone-sdk/blob/master/README-NestedScrolling.md)
@@ -28,7 +28,7 @@
 
         >因为当时公司用的都是string,所以就没有匹配其他类型~ 老项目(GBK编码 GUI项目) 命名什么的不要吐槽了~ 写的很坑不过理解的话应该还可以
 
-<a id="way3"></a>
+<a id="way2"></a>
 * 项目介绍篇(按顺序 从好到一般)
     * [zone-sdk](https://github.com/luhaoaimama1/zone-sdk)
     
@@ -69,7 +69,7 @@
     * [Http_Rflist_Helper](https://github.com/luhaoaimama1/Http_Rflist_Helper/blob/master/README-cn.md)
 
         >一个可以把网络请求 和pullview关联，从而不需要处理 翻页 上拉下拉的动画处理 与 数据更新问题 并且可以全局切换网络请求库
-
+<a id="way3"></a>
 * 插件篇
     * [快速生成六种单例](https://github.com/luhaoaimama1/SingletonTest)
 
