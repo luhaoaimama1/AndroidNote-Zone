@@ -15,6 +15,9 @@
     * [打造无敌解耦的BaseActivity](https://github.com/luhaoaimama1/zone-sdk/blob/master/README-BaseActivity.md)
 
         >解耦，各司其职。拍照等涉及onActivityResult的封装
+    * 事件传递的学习
+        > 先看这个[事件传递源码学习](https://github.com/luhaoaimama1/zone-sdk/blob/master/README-EventPass-sourceCodeStudy.md)
+        > 在看这个[事件传递通过日志进行探究与requestDisallowInterceptTouchEvent的探究](https://github.com/luhaoaimama1/zone-sdk/blob/master/README-EventPass-demoStudy.md)
     * [Android 屏幕适配终极解决方案（包含生成程序dp sp与解决方案）](https://github.com/luhaoaimama1/AnnotationStudy/blob/master/README.md)
 
         >[ldpi,mdip,hdpi,xhdip,xxhdpi生成DP](https://github.com/luhaoaimama1/JavaZone/blob/master/JavaTest_Zone/src/%E9%80%82%E9%85%8D/MakeXml_Dp.java)
