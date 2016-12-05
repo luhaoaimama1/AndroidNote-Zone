@@ -220,9 +220,11 @@ Parallel Old:老年代的多线程收集器，使用标记 - 整理算法，吞�
 长期存活的对象进入老年代:jvm给每个对象定义一个对象年龄计数器。如果eden出生并经过第一次Minor GC后仍然存活并且能被Survivor容纳的话,将被移动到Survivor空间并将对象年龄设为1.对象在Survivor区每"熬过"一次Minor GC则年龄+1,当年龄达到一定程度(默认15岁),下一次将会被晋升老年代。
 动态对象年龄判定:为了更好的适应内存状况。如果在Survivor空间中相同年龄的所有对象大小的综合大于Survivor的一半,那么大于等于这个年龄的将被一起带入老年代
 >Tips:研究代码对象到底怎么回收请看Page:93(深入理解JVM虚拟机第二版)
+
 <a id="way4-3"></a>
 ###空间分配担保
 ![](./demo/担保.png)
+
 <a id="way4-4"></a>
 ###虚拟机参数设置;
 代码的运行参数设置为： -Xms20M -Xmx20M -Xmn10M -XX:+PrintGCDetails -XX:SurvivorRatio=8
@@ -230,6 +232,7 @@ Parallel Old:老年代的多线程收集器，使用标记 - 整理算法，吞�
 
 #第七章
 ![](http://images0.cnblogs.com/blog2015/544748/201505/251937420687138.jpg)
+
 <a id="way5-1"></a>
 ###非法向前引用
 编译器手机的顺序是由语句在源文件中出现的顺序决定的,静态语句块中只能访问到定义在静态语句之前的变量,定义它之后的变量,可以赋值,但不能访问
@@ -246,6 +249,7 @@ public class Test{
 ><clinit>(类构造器方法):如果类或者接口没有静态语句块,也没有对变量的赋值,那么编译器可以不为这个类生成<clinit>方法并且他被加锁了 
 
 >Tips:如果在此方法中耗时很长,就可能造成多个进程阻塞;
+
 <a id="way5-2"></a>
 ###类什么时候才被初始化
 * 只有这6中情况才会导致类的类的初始化
@@ -259,6 +263,7 @@ public class Test{
     * 1如果这个类还没有被加载和链接，那先进行加载和链接
     * 2假如这个类存在直接父类，并且这个类还没有被初始化（注意：在一个类加载器中，类只能初始化一次），那就初始化直接的父类（不适用于接口）
     * 3加入类中存在初始化语句（如static变量和static块），那就依次执行这些初始化语句。
+
 <a id="way5-3"></a>         
 ###双亲委派模型
 Java虚拟器角度仅仅有两种不同的类加载器:
@@ -272,6 +277,7 @@ Extension ClassLoader:负责加载java平台中扩展功能的一些jar包，包
 App ClassLoader:负责记载classpath中指定的jar包及目录中class
 Custom ClassLoader:属于应用程序根据自身需要自定义的ClassLoader，如tomcat、jboss都会根据j2ee规范自行实现ClassLoader
 加载过程中会先检查类是否被已加载，检查顺序是自底向上，从Custom ClassLoader到BootStrap ClassLoader逐层检查，只要某个classloader已加载就视为已加载此类，保证此类只所有ClassLoader加载一次。而加载的顺序是自顶向下，也就是由上层来逐层尝试加载此类。
+
 <a id="way5-3-1"></a>
 ####为什么这么设计?
 
@@ -324,6 +330,7 @@ public void findClass_(){
 ```
 
 #静态分派与动态分派
+
 <a id="way6-1"></a>  
 ###静态分派
 Map map=new HashMap();
@@ -367,9 +374,11 @@ public class OverLoad {
 注意:1、基本类型是重载按char->int->long->float->double->Character->Serializable(因为Character实现了他)顺序匹配的。
      2、可变参数的重载优先级是最低的。
      >Tips:如果出现了两个参数分别为Serializable和Comparable(Character实现这两个),编译器无法确定自动转型那种类型。提示类型模糊拒绝编译;
+
 <a id="way6-2"></a>  
 ###动态分派
 方法执行会找到对应的实际类型。
+
 <a id="way7-1"></a>  
 #动态加载  
 >NB之处 不仅仅能实现别人的接口,也能实现自己的接口这样相当于 对象本身了,但是可以却可以在方法执行之前或之后搞事情了
@@ -416,6 +425,7 @@ java逆向工具:为了解决把1.5中编写的代码放到1.4 1.3的环境部�
 
 
 #Java魔法糖
+
 <a id="way8-1"></a> 
 ###泛型与擦除
 
@@ -460,6 +470,7 @@ public class Sugar {
 >[自动装箱陷阱](./语法糖/自动装箱陷阱)
 
 #高效并发
+
 <a id="way9-1"></a> 
 ###volatile型变量的特殊规则
 当定义为volatile之后具备两种特性:
