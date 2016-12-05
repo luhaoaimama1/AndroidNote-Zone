@@ -531,6 +531,8 @@ public class Sugar {
 
 >额外知识 ++不是原子性,AtomicInteger CAS(原子性)来避免阻塞同步;
 
-#Thanks
+[▲ 回到顶部](#top)
+
+# Reference&Thanks：
 
 http://www.cnblogs.com/leesf456/p/5218594.html

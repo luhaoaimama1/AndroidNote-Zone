@@ -30,6 +30,7 @@
     * [如果有人对json解析实体类感兴趣,请看这个项目](https://github.com/luhaoaimama1/JsonParser)
 
         >因为当时公司用的都是string,所以就没有匹配其他类型~ 老项目(GBK编码 GUI项目) 命名什么的不要吐槽了~ 写的很坑不过理解的话应该还可以
+    * [深入理解Java虚拟机总结](https://github.com/luhaoaimama1/AndroidNote-Zone/blob/master/note/jvm/深入理解Java虚拟机总结.md)
 
 <a id="way2"></a>
 * 项目介绍篇(按顺序 从好到一般)
