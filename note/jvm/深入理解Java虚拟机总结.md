@@ -33,8 +33,11 @@
         * [Java线程调度](#way9-2)
     
 >各种基本类型:boolean、byte、char、short、int、float、long、double;
+
 >对象引用:reference类型 不等于对象本身,可能是对象的句柄也可能对象的引用指针
+
 >局部变量默认没有初始值,不赋值是不可以使用的。和类变量(默认是有的)不一样;
+
 >额外了解:插入式注解处理器:需要继承AbstractProcessor;
 
 #内存管理机制
@@ -47,10 +50,10 @@
 * jvm各个区域的概要
 >PS:平时说的Heap和Stack。 其Stack就是虚拟机栈 或者是虚拟机栈中局部变量表部分
     * 方法区域-**线程共享**
-    >存储已被虚拟机加载的 类信息、常量、静态变量 即时编译后的代码数据等。(Permanenet Generation:永久代)
+        >存储已被虚拟机加载的 类信息、常量、静态变量 即时编译后的代码数据等。(Permanenet Generation:永久代)
         * 运行时常量区
-        >存放编译期生成的各种字面量和符号引用。
-        >动态的:运行期间也可能将新的常量放入池中(String类的intern()方法)
+            >存放编译期生成的各种字面量和符号引用。
+            >动态的:运行期间也可能将新的常量放入池中(String类的intern()方法)
     * Java堆(Heap)-**线程共享**
     >几乎所有的对象实例以及数组都要在堆上分配。
     >垃圾收集器(GC堆)管理的主要区域.一般细分 新生代和老年代,在细致一点的有Eden(伊甸园 新生代)空间、From Survivor(幸存区)空间、To Survivor空间 Genured Gen(养老区)等
@@ -68,13 +71,16 @@
 ###对象访问定位
 ![](./demo/jvm_02.png)
 >句柄优势:reference本身不需要修改,只会改变句柄中的实例数据指针
+
 >直接指针访问优势:最大好处速度快。节省了一次指针定位的开销;
 
 <a id="way1-3"></a>
 ###对象的布局
 3个区域:对象头(Header)、实例数据(Instance Data)和对齐填充(Padding)
 >header:(官方称 Mark Word)运行时数据,入哈希码(HashCode)、GC分代年龄 锁状态标识
+
 >Instance Data:类型指针,既对象只想他的类元数据的指针;
+
 >Padding:因为对象的大小必须是8字节的整数倍。如果数据没有对齐。需要Padding来补全
 
 #垃圾收集器与内存分配策略
@@ -138,6 +144,7 @@ public class ReferenceCountingGC {
 <a id="way3-1"></a>
 ###标记-清除算法(基础算法,剩下的都是基于它的不足而进行改进的)
 标记:标记所有需要回收的对象
+
 清除:统一回收所有被标记的对象
 >不足1:效率问题,标记和清除效率都不高;
 >不足2:空间问题,产生大量的不连续的内存碎片
@@ -159,14 +166,21 @@ public class ReferenceCountingGC {
 <a id="way3-4"></a>
 ###分代收集算法
 根据对象存活周期将内存划分不同的几块。一般堆分为 新生代 和老年代。这样根据年代的特点采用最适当的收集算法
+
 新生代:少量存活 选择复制算法
+
 老年代:存活率高,没有额外空间担保,必须使用 标记清理 或者标记整理;
 
-GC会产生停顿(Sun也叫它 "Stop The World"),OoMap 存放着GC Roots,不是每条指令都生成一个。
-不是任何时都能停下来进行 GC ,只有在 "特定的位置" 才可以GC 这个位置也叫安全点(Safepoint)
-安全点的选定基本上是以程序"是否具有让程序长时间执行的特征"为标准选定的
+>GC会产生停顿(Sun也叫它 "Stop The World"),OoMap 存放着GC Roots,不是每条指令都生成一个。
+
+>不是任何时都能停下来进行 GC ,只有在 "特定的位置" 才可以GC 这个位置也叫安全点(Safepoint)
+
+>安全点的选定基本上是以程序"是否具有让程序长时间执行的特征"为标准选定的
+
 关于安全点另一个需要考虑的就是如何在GC发生的时让所有线程都"跑"到最近的安全点上在停下来;有两种方案
+
 抢先式中断(Preemptive Suspension)(现在几乎都这种方案):不需要线程的执行代码主动配合,GC发生时候先把线程全部中断,如果有线程不在安全点,就回复线程让它跑到安全点。
+
 主动式中断(Voluntary Suspension):当GC需要中断线程的时候,不对线程造作,仅仅简单地设置一个标志位,各个线程执行的时候主动去轮询这个标志位,发现中断标志位真就挂起,轮询标志的地方安全点重合。
 而对于不执行的线程,任何时间都是安全的也称为安全区;
 
@@ -178,8 +192,8 @@ GC会产生停顿(Sun也叫它 "Stop The World"),OoMap 存放着GC Roots,不是�
 >G1收集器因为没有商用的就不写了;
 
 Serial:单线程收集器，在进行垃圾收集时，必须要暂停其他所有的工作线程，直到它收集结束。
->Tips:1. 需要STW（Stop The World），停顿时间长。
-
+>1. 需要STW（Stop The World），停顿时间长。
+ 
 >2. 简单高效，对于单个CPU环境而言，Serial收集器由于没有线程交互开销，可以获取最高的单线程收集效率。
 
 ParNew:是Serial的多线程版本，除了使用多线程进行垃圾收集外，其他行为与Serial完全一样
@@ -219,8 +233,11 @@ Parallel Old:老年代的多线程收集器，使用标记 - 整理算法，吞�
     * Minor GC:指发生在新生代的垃圾收集动作，非常频繁，速度较快。
     * Major GC:指发生在老年代的GC，出现Major GC，经常会伴随一次Minor GC，同时Minor GC也会引起Major GC，一般在GC日志中统称为GC，不频繁。
     * Full GC:指发生在老年代和新生代的GC，速度很慢，需要Stop The World。
+    
 大对象直接进入老年代:大对象就是大量连续内存空间的Java对象,典型的就是很长的字符串及数组。并且内存超过虚拟机设置大对象的值;
+
 长期存活的对象进入老年代:jvm给每个对象定义一个对象年龄计数器。如果eden出生并经过第一次Minor GC后仍然存活并且能被Survivor容纳的话,将被移动到Survivor空间并将对象年龄设为1.对象在Survivor区每"熬过"一次Minor GC则年龄+1,当年龄达到一定程度(默认15岁),下一次将会被晋升老年代。
+
 动态对象年龄判定:为了更好的适应内存状况。如果在Survivor空间中相同年龄的所有对象大小的综合大于Survivor的一半,那么大于等于这个年龄的将被一起带入老年代
 >Tips:研究代码对象到底怎么回收请看Page:93(深入理解JVM虚拟机第二版)
 
@@ -233,7 +250,7 @@ Parallel Old:老年代的多线程收集器，使用标记 - 整理算法，吞�
 代码的运行参数设置为： -Xms20M -Xmx20M -Xmn10M -XX:+PrintGCDetails -XX:SurvivorRatio=8
 ![](http://images2015.cnblogs.com/blog/616953/201602/616953-20160226111115693-1490327308.png)
 
-#第七章
+#类的初始化过程
 ![](http://images0.cnblogs.com/blog2015/544748/201505/251937420687138.jpg)
 
 <a id="way5-1"></a>
@@ -270,17 +287,22 @@ public class Test{
 <a id="way5-3"></a>         
 ###双亲委派模型
 Java虚拟器角度仅仅有两种不同的类加载器:
+
 一种启动类加载器(Bootstrap ClassLoader):C++语言实现是虚拟器自身的一部分;
+
 另一种是所有其他的类加载器(java语言,JVM之外 继承ClassLoader)
 >更详细:
 
 ![](./demo/类加载器.png)
 
 Bootstrap ClassLoader:负责加载$JAVA_HOME中jre/lib/rt.jar里所有的class，由C++实现，不是ClassLoader子类
+
 Extension ClassLoader:负责加载java平台中扩展功能的一些jar包，包括$JAVA_HOME中jre/lib/*.jar或-Djava.ext.dirs指定目录下的jar包
+
 App ClassLoader:负责记载classpath中指定的jar包及目录中class
+
 Custom ClassLoader:属于应用程序根据自身需要自定义的ClassLoader，如tomcat、jboss都会根据j2ee规范自行实现ClassLoader
-加载过程中会先检查类是否被已加载，检查顺序是自底向上，从Custom ClassLoader到BootStrap ClassLoader逐层检查，只要某个classloader已加载就视为已加载此类，保证此类只所有ClassLoader加载一次。而加载的顺序是自顶向下，也就是由上层来逐层尝试加载此类。
+>加载过程中会先检查类是否被已加载，检查顺序是自底向上，从Custom ClassLoader到BootStrap ClassLoader逐层检查，只要某个classloader已加载就视为已加载此类，保证此类只所有ClassLoader加载一次。而加载的顺序是自顶向下，也就是由上层来逐层尝试加载此类。
 
 <a id="way5-3-1"></a>
 ####为什么这么设计?
@@ -329,6 +351,7 @@ rotected synchronized Class<?> loadClass(String name, boolean resolve)
 >热部署:OSGI(类加载器精髓);
 
 >NB技巧:子类可以公开父类中的protected的方法;
+
 ```
 public void findClass_(){
     super.findClass();//protected
@@ -381,6 +404,7 @@ public class OverLoad {
 }  
 ```
 从头注解方法，结果会按顺序输出。
+
 1、基本类型是重载按char->int->long->float->double->Character->Serializable(因为Character实现了他)顺序匹配的。
 
 2、可变参数的重载优先级是最低的。
