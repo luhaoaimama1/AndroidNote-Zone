@@ -275,6 +275,7 @@ Java虚拟器角度仅仅有两种不同的类加载器:
 >更详细:
 
 ![](./demo/类加载器.png)
+
 Bootstrap ClassLoader:负责加载$JAVA_HOME中jre/lib/rt.jar里所有的class，由C++实现，不是ClassLoader子类
 Extension ClassLoader:负责加载java平台中扩展功能的一些jar包，包括$JAVA_HOME中jre/lib/*.jar或-Djava.ext.dirs指定目录下的jar包
 App ClassLoader:负责记载classpath中指定的jar包及目录中class
@@ -286,6 +287,7 @@ Custom ClassLoader:属于应用程序根据自身需要自定义的ClassLoader�
 
 类加载器:任何一个类都需要加载它的类加载器和这个类一同确立其在java虚拟机唯一性。每个类加载器都有类名称空间。
 >两个类是否相同,是由同一个类加载器为前提下才有意义.相同是指equals、instanceof isAssignalbeFrom isIntance等;
+
 例如类java.lang.Object,他存放在rt.jar中,无论哪个类加载器加载这个类,最终都是委派给魔性最顶端的启动类加载器进行加载。因此Object类在程序的各种类加载器环境中都是**同一个类**。
 相反如果没有使用,各个类加载自行加载的话。那么系统将出现多个不同的Object类,那么java类型体系中最基本的行为也无法保证;
 
@@ -325,6 +327,7 @@ rotected synchronized Class<?> loadClass(String name, boolean resolve)
 
 1.2以后,应当把自己的类逻辑写到findClass()(protected)方法中;
 >热部署:OSGI(类加载器精髓);
+
 >NB技巧:子类可以公开父类中的protected的方法;
 ```
 public void findClass_(){
@@ -470,7 +473,7 @@ public class Sugar {
 }
 
 ```
->[自动装箱陷阱](./语法糖/自动装箱陷阱)
+>[自动装箱陷阱](https://github.com/luhaoaimama1/AndroidNote-Zone/blob/master/note/jvm/%E8%AF%AD%E6%B3%95%E7%B3%96/%E8%87%AA%E5%8A%A8%E8%A3%85%E7%AE%B1%E9%99%B7%E9%98%B1.java)
 
 #高效并发
 
