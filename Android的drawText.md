@@ -2,7 +2,9 @@
     * canvas.drawText(string, **baseLineX**, **baseLineY**, paint)
     * baseLineY=基线的Y;
     * baseLineX=基线的X;
+    
 >API:canvas.drawText(String text,int start,int end,float x,float y, paint); //截取字符串 然后绘制     
+
 * 目录
     * [`基础了解`](#way0)
     * [`获取FontMetrics`](#way1)
