@@ -2,6 +2,7 @@
     * canvas.drawText(string, **baseLineX**, **baseLineY**, paint)
     * baseLineY=基线的Y;
     * baseLineX=基线的X;
+    * 本篇以textSize=100为例
     
 >API:canvas.drawText(String text,int start,int end,float x,float y, paint); //截取字符串 然后绘制     
 
@@ -13,7 +14,7 @@
     * [`测量所绘制的矩形范围`](#way4)
     * [`setTextAlign`](#way5)
     * [`如何把这个bounds移动到对应的字符显示位置呢`](#way6)
-    * [`Demo演示`](#way7)
+    * [`drawText的工具封装与Demo演示`](#way7)
     
 <a id="way0"></a>
 ###基础了解 
@@ -96,5 +97,9 @@ switch (paint.getTextAlign()) {
 >从默认的baseLineX=0,baseLineY=0,LEFT模式。转变到现在的值
 
 <a id="way7"></a>
+
+###[drawText的工具封装](https://github.com/luhaoaimama1/zone-sdk/blob/master/Android_Zone_Lib/src/and/utils/view/DrawUtils.java)
+>在内部类Text里
+
 ###[Demo演示图-点击可进入代码](https://github.com/luhaoaimama1/zone-sdk/blob/master/Android_Zone_Test/src/com/example/mylib_test/activity/animal/viewa/DrawTextView.java)
 ![](./demo/drawText_demo.png)
