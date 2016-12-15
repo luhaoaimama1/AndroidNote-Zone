@@ -96,5 +96,5 @@ switch (paint.getTextAlign()) {
 >从默认的baseLineX=0,baseLineY=0,LEFT模式。转变到现在的值
 
 <a id="way7"></a>
-###[Demo演示图-点击可进入代码]()
+###[Demo演示图-点击可进入代码](https://github.com/luhaoaimama1/zone-sdk/blob/master/Android_Zone_Test/src/com/example/mylib_test/activity/animal/viewa/DrawTextView.java)
 ![](./demo/drawText_demo.png)
