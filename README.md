@@ -37,6 +37,7 @@
         >因为当时公司用的都是string,所以就没有匹配其他类型~ 老项目(GBK编码 GUI项目) 命名什么的不要吐槽了~ 写的很坑不过理解的话应该还可以
     * [深入理解Java虚拟机总结](https://github.com/luhaoaimama1/AndroidNote-Zone/blob/master/note/jvm/深入理解Java虚拟机总结.md)
     * [Rebound(弹簧系统-让动画不再僵硬)的简单使用与源码分析](https://github.com/luhaoaimama1/ZAnimate/blob/master/Rebound%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8.md)
+    * [Android的drawText()详解](Android的drawText.md)
         
 <a id="way2"></a>
 * 项目介绍篇(按顺序 从好到一般)
