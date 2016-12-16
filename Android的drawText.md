@@ -101,5 +101,13 @@ switch (paint.getTextAlign()) {
 ###[drawText的工具封装](https://github.com/luhaoaimama1/zone-sdk/blob/master/Android_Zone_Lib/src/and/utils/view/DrawUtils.java)
 >在内部类Text里
 
+范例:
+```
+ DrawUtils.Text.with(canvas, content, 0, y, paint)
+                        .align(align)
+                        .drawBound(paintBounds)
+                        .show(showType);
+```
+
 ###[Demo演示图-点击可进入代码](https://github.com/luhaoaimama1/zone-sdk/blob/master/Android_Zone_Test/src/com/example/mylib_test/activity/animal/viewa/DrawTextView.java)
 ![](./demo/drawText_demo.png)
