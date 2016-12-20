@@ -39,6 +39,7 @@
     * [深入理解Java虚拟机总结](https://github.com/luhaoaimama1/AndroidNote-Zone/blob/master/note/jvm/深入理解Java虚拟机总结.md)
     * [Rebound(弹簧系统-让动画不再僵硬)的简单使用与源码分析](https://github.com/luhaoaimama1/ZAnimate/blob/master/Rebound%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8.md)
     * [Android的drawText()详解](Android的drawText.md)
+    * [Android Canvas的详解包括逻辑图](https://github.com/luhaoaimama1/zone-sdk/blob/master/README-Canvas.md)
         
 <a id="way2"></a>
 * 项目介绍篇(按顺序 从好到一般)
